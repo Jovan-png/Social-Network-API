@@ -1,28 +1,17 @@
 const router = require('express').Router()
 
-const User = require('../../models/User')
+const { getAllUser, createUser, getUserById,  updateUser, deleteUser } = require('../../controller/user-controller')
 
+router
+.route('/')
+.get(getAllUser)
+.post(createUser);
 
-
-router.get('/',(req, res) =>{
-    User.find()
-    .then(UserData =>{
-        res.json(UserData)
-        console.log(UserData)
-    })
-    .catch(err =>{
-        console.log(err)
-    })
-})
-
-
-
-
-router.get('/',(req, res) =>{
-res.send('Hello')
-})
-
-
+router
+.route('/:id')
+.get(getUserById)
+.put(updateUser)
+.delete(deleteUser)
 
 
 

@@ -5,8 +5,11 @@ router.use('/api', apiRoutes)
 
 
 router.use('/', (req, res)=>{
-    console.log('working')
-    res.send('Hello')
+  res.status(404).send(`Not Found`)
 })
+
+
+
+
 
 module.exports = router;

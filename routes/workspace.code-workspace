@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "new challenge",
+			"path": "..\\..\\new challenge"
+		},
+		{
+			"name": "routes",
+			"path": "."
+		},
+		{
+			"name": "controller",
+			"path": "..\\controller"
+		}
+	],
+	"settings": {}
+}
