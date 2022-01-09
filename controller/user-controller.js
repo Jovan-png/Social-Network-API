@@ -43,7 +43,7 @@ const userController = {
         })
     },
 
-    updateUser(){
+    updateUser({params, body}, res){
         User.findByIdAndUpdate({_id: params.id }, body, {new: true })
         .then(UserData=>{
             res.json(UserData)
@@ -85,19 +85,13 @@ const userController = {
       },
 
       
-    removeFriends({ params}, res) {
+      removeFriends({params}, res) {
         User.findOneAndUpdate(
             { _id: params.userId },
-            { $pull: { friends:  params.id} },
-            { new: true })
-            .select('-__v')
+            { $pull: { friends: {friendId:  params.friendId  } } },
+            {new: true}
+            )
         .then(UserData => {
-            if (!UserData) {
-                res.status(404).json({
-                    message: 'no user found with this id'
-                });
-                return;
-            }
             res.json(UserData);
         })
         .catch(err => {
