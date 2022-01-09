@@ -4,7 +4,7 @@
 
 ## Description
 
-    This is an Api built to have users, friends, thoughts and reactions all routes are fully functionally with post and delete request.
+This is an Api built to have users, friends, thoughts and reactions all routes are fully functionally with post and delete request.
 
 ## Tables Of Contents
 
